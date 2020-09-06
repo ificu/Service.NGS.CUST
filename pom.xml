@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.wh.pjtr</groupId>
+	<artifactId>Service.NGS.CUST</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Service.NGS.CUST</name>
+	<description>워커힐 NGS 고객관리</description>
+
+	<properties>
+		<java.version>11</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<nexacro.uiadapter.version>1.0.0-SNAPSHOT</nexacro.uiadapter.version>
+	</properties>
+
+	<repositories>
+	   <repository>
+            <id>tobesoft</id>
+            <url>http://mangosteen.tobesoft.co.kr/nexus/repository/maven-public/</url>
+            <releases>
+            </releases>
+            <snapshots>
+            </snapshots>
+        </repository>
+		<repository>
+			<id>mvn2</id>
+			<url>http://repo1.maven.org/maven2/</url>
+			<releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+		</repository>
+		<repository>
+		    <id>mesir-repo</id>
+		    <url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
+		</repository>
+	</repositories>
+    
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		  <!-- 수동 생성 부분 -->
+		<dependency> 
+		   <groupId>org.mariadb.jdbc</groupId> 
+		   <artifactId>mariadb-java-client</artifactId> 
+		</dependency>   
+		<dependency>
+		   <groupId>org.bgee.log4jdbc-log4j2</groupId>
+		   <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+		   <version>1.16</version>
+		</dependency>
+		<dependency>
+		   <groupId>com.integralblue</groupId>
+		   <artifactId>log4jdbc-spring-boot-starter</artifactId>
+		   <version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+			
+        <!--   NEXACROPLATFORM UIADAPTER17 LIBRARY  -->
+        <dependency>
+            <groupId>com.nexacro.uiadapter17.spring</groupId>
+            <artifactId>uiadapter17-spring-core</artifactId>
+            <version>${nexacro.uiadapter.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.nexacro.uiadapter17.spring</groupId>
+            <artifactId>uiadapter17-spring-dataaccess</artifactId>
+            <version>${nexacro.uiadapter.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.nexacro.uiadapter17.spring</groupId>
+            <artifactId>uiadapter17-spring-excel</artifactId>
+            <version>${nexacro.uiadapter.version}</version>
+        </dependency>			
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
