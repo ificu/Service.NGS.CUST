@@ -1,4 +1,4 @@
-package com.wh.pjtr.NGS.CUST.config;
+package com.wh.pjtr.ngs.cust.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,18 +47,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.csrf().disable()
-				.authorizeRequests()
-				.anyRequest().authenticated()
-				.and()
-				.httpBasic();
+		http.csrf().disable()
+			.authorizeRequests()
+			.anyRequest().authenticated()
+			.and()
+			.httpBasic();
 	}
 
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth
-			.inMemoryAuthentication()
+		auth.inMemoryAuthentication()
 			.withUser("walkerhill").password(passwordEncoder().encode("walkerhill")).roles("USER");
 	}
 

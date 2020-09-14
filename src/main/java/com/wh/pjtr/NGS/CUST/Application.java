@@ -1,4 +1,4 @@
-package com.wh.pjtr.NGS.CUST;
+package com.wh.pjtr.ngs.cust;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

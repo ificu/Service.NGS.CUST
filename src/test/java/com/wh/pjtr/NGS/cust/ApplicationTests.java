@@ -1,4 +1,4 @@
-package com.wh.pjtr.NGS.CUST;
+package com.wh.pjtr.ngs.cust;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

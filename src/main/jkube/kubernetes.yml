@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngs-cust-deployment-v2
+  namespace: default
+  labels:
+    app: ngs-cust
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngs-cust
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: ngs-cust
+        version: v2
+    spec:
+      serviceAccountName: ngs-cust
+      containers:
+        - name: ngs-cust
+          image: localhost:5000/ngs-cust:latest
+          ports:
+            - containerPort: 8080
+          imagePullSecrets:
+            - name: regcred
